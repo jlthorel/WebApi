@@ -1,0 +1,6 @@
+{
+    "Environement" : "Dev",
+    "App_log_dir"  : "/DEV_DIR/projets/WebApi/log",
+    "App_port"     : 8586,
+    "mongoDbUrl" : "mongodb://127.0.0.1/webapi"
+}

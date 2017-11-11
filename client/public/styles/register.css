@@ -1,0 +1,15 @@
+
+  .form-register {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+
+  .form-register .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px;
+    font-size: 14px;
+  }
