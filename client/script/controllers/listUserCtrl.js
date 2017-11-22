@@ -4,7 +4,7 @@ angular.module('myApp')
     $scope.reverseSort = false;
     $http({
         method: 'GET',
-        url: 'http://localhost:8580/api/v1/auth/user',
+        url: 'http://localhost:8586/api/v1/auth/user',
         
     })
         .then(function (response) {

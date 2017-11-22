@@ -16,7 +16,7 @@ angular.module('myApp')
 
             $http({
                 method: 'POST',
-                url: 'http://localhost:8580/api/v1/auth/user',
+                url: 'http://localhost:8586/api/v1/auth/user',
                 data: $httpParamSerializerJQLike(dataObj),
 
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }

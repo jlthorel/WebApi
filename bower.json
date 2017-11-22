@@ -2,7 +2,7 @@
   "name": "WebApi",
   "description": "Test javascript full stack avec MEAN",
   "main": "",
-  "license": "MIT",
+  "liProductsnse": "MIT",
   "homepage": "https://github.com/jlthorel/WebApi",
   "ignore": [
     "**/.*",
@@ -14,6 +14,7 @@
   "dependencies": {
     "angular": "^1.6.6",
     "angular-ui-router": "^1.0.10",
-    "bootstrap": "boostrap#^3.3.7"
+    "bootstrap": "boostrap#^3.3.7",
+    "angular-ui-notification": "^0.3.6"
   }
 }

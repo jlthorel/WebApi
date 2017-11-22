@@ -1,28 +1,27 @@
 angular.module('myApp')
-    .controller('loginCtrl', function ($scope, $http, $httpParamSerializerJQLike) {
+    .controller('loginCtrl', function ($scope, $http, $location, $httpParamSerializerJQLike, AuthService) {
         $scope.SendLoginRequest = function () {
 
-            var dataObj = {
-                username: $scope.email,
-                password: $scope.password
-            };
 
-            $http({
-                method: 'POST',
-                url: 'http://localhost:8586/api/v1/auth/login',
-                data: $httpParamSerializerJQLike(dataObj),
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      // initial values
+      $scope.error = false;
+      $scope.disabled = true;
 
-            })
-                .then(function (response) {
-                    $scope.myWelcome = response.data;
-                    localStorage.setItem('token', response.data.token);
-
-                    console.log(response);
-                }, function (response) {
-                    //Second function handles error
-                    $scope.errorMessage = response.data;
-                    console.log(response);
-                });
+       // call login from service
+       AuthService.login($scope.email, $scope.password)
+       // handle success
+       .then(function () {
+         $location.path('/home');
+         $scope.disabled = false;
+         $scope.loginForm = {};
+         localStorage.setItem('token', response.data.token);
+       })
+       // handle error
+       .catch(function () {
+         $scope.error = true;
+         $scope.errorMessage = "Invalid username and/or password";
+         $scope.disabled = false;
+         $scope.loginForm = {};
+       });
         };
     });
